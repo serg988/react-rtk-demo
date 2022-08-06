@@ -8,7 +8,7 @@ export const UserView = () => {
     dispatch(fetchUsers())
   }, [])
 
-  const { users, loading } = useSelector((state) => state.user)
+  const { users, loading, error } = useSelector((state) => state.user)
 
   let content = 'Loading...'
   if (!loading) {
@@ -20,6 +20,9 @@ export const UserView = () => {
         ))}
       </div>
     )
+  }
+  if (!loading && users.length === 0) {
+    content = <div>{error}</div>
   }
 
   return <div>{content}</div>
