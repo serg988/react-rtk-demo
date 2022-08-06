@@ -1,5 +1,3 @@
-import reducer from '../icecream/icecreamSlice'
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
@@ -37,4 +35,5 @@ export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {
 })
 
 export default userSlice.reducer
+
 
